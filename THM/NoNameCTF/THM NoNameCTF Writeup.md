@@ -159,6 +159,7 @@ Let's browse to port 9090 website with the secret directory:
 ![6ede18c18e56f998156807e30828299c.png](_resources/6ede18c18e56f998156807e30828299c.png)
 
 Nothing interesting, how about the source code?
+
 ![32599adf76a4a76c570d55a65701de96.png](_resources/32599adf76a4a76c570d55a65701de96.png)
 
 Yes ! We got a parameter hidden in source code. After some testing, looks like it was vulnerable to Server Side Template Injection (SSTI):
