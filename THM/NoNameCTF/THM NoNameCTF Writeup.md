@@ -66,12 +66,12 @@ nc <ip> 2222
 ```
 Looks like it is providing some services. The **get_secret_directory** looks interesting but it was prompting us to login before using that service. We will come back to this later.
 
-![c54ca29dcc6d143e6046d2661b512fe7.png](../../_resources/c54ca29dcc6d143e6046d2661b512fe7.png)
+![c54ca29dcc6d143e6046d2661b512fe7.png](_resources/c54ca29dcc6d143e6046d2661b512fe7.png)
 
 ### Port 9090
 Upon browsing to port 9090 website, we've encountered an error.
 
-![6667948cfd36e9a2914a933b392fe3b9.png](../../_resources/6667948cfd36e9a2914a933b392fe3b9.png)
+![6667948cfd36e9a2914a933b392fe3b9.png](_resources/6667948cfd36e9a2914a933b392fe3b9.png)
 
 For now we have gathered some initial information about each open ports. Let's do a quick summarize, port 80 source code indicating we might need to do buffer overflow, since buffer overflow less likely will be happen in websites, let's now focus on port 2222.
 
@@ -155,16 +155,16 @@ Yay ! Now we got the secret directory.
 ## Initial Foothold
 Let's browse to port 9090 website with the secret directory:
 
-![6ede18c18e56f998156807e30828299c.png](../../_resources/6ede18c18e56f998156807e30828299c.png)
+![6ede18c18e56f998156807e30828299c.png](_resources/6ede18c18e56f998156807e30828299c.png)
 
 Nothing interesting, how about the source code?
-![32599adf76a4a76c570d55a65701de96.png](../../_resources/32599adf76a4a76c570d55a65701de96.png)
+![32599adf76a4a76c570d55a65701de96.png](_resources/32599adf76a4a76c570d55a65701de96.png)
 
 Yes ! We got a parameter hidden in source code. After some testing, looks like it was vulnerable to Server Side Template Injection (SSTI):
 ```
 http://10.10.107.235:9090/xxxxx/?hackme={{7*7}}
 ```
-![b0ddea2d264559572693e4cc6587e728.png](../../_resources/b0ddea2d264559572693e4cc6587e728.png)
+![b0ddea2d264559572693e4cc6587e728.png](_resources/b0ddea2d264559572693e4cc6587e728.png)
 
 Without further ado, let's spawn a reverse shell using **tplmap**:
 #### Notes: If you have problem installing tplmap, take this: [solution](https://blog.csdn.net/weixin_46041615/article/details/121111050), you're welcome
@@ -178,14 +178,14 @@ nc -lvnp 4567
 ```
 
 Execute the tplmap's command and BOOM ! Reverse shell achieved !
-![ac8ecc09a421a28a018da587f359cb13.png](../../_resources/ac8ecc09a421a28a018da587f359cb13.png)
+![ac8ecc09a421a28a018da587f359cb13.png](_resources/ac8ecc09a421a28a018da587f359cb13.png)
 ***
 ## Privilege Escalation
 > Classic <3 - GTFOBins
 ```
 sudo -l
 ```
-![abacfee0f5d6a41063588edd829a7efb.png](../../_resources/abacfee0f5d6a41063588edd829a7efb.png)
+![abacfee0f5d6a41063588edd829a7efb.png](_resources/abacfee0f5d6a41063588edd829a7efb.png)
 
 ### Exploit 
 ```
@@ -195,7 +195,7 @@ sudo /usr/bin/pip install $TF
 ```
 
 ### Rooted !
-![1ca5eba662366c1f2fcc22fbe8148980.png](../../_resources/1ca5eba662366c1f2fcc22fbe8148980.png)
+![1ca5eba662366c1f2fcc22fbe8148980.png](_resources/1ca5eba662366c1f2fcc22fbe8148980.png)
 
 
 To whoever reading this till here, thank you so much and have a nice day !
