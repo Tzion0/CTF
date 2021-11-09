@@ -1,4 +1,4 @@
-# THM NoNameCTF Writeup
+# NoNameCTF Writeup
 ## Enumeration
 ```
 nmap -sCV -oN nmap/NoNameCTF <ip>
