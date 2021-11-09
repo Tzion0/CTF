@@ -57,7 +57,7 @@ We got 4 open ports, 22,80,2222,9090. Let's take a look at it one by one. First,
 
 ### Port 80
 Looking at port 80 website's source code, we found a potential hint. Looks like hinting about buffer overflow. 
-![3f64f75b1b6315cc94044f566a13328e.png](../../_resources/3f64f75b1b6315cc94044f566a13328e.png)
+![3f64f75b1b6315cc94044f566a13328e.png](/_resources/3f64f75b1b6315cc94044f566a13328e.png)
 
 ### Port 2222
 Looking at port 2222, we can try connect to it via netcat:
