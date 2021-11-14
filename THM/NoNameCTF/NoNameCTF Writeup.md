@@ -180,6 +180,7 @@ nc -lvnp 4567
 ```
 
 Execute the tplmap's command and BOOM ! Reverse shell achieved !
+
 ![ac8ecc09a421a28a018da587f359cb13.png](_resources/ac8ecc09a421a28a018da587f359cb13.png)
 ***
 ## Privilege Escalation
