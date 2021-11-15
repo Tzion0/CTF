@@ -1,4 +1,7 @@
 # K3RN3L DROID
+### Task source :
+https://github.com/Tzion0/CTF/blob/master/K3RN3LCTF/K3RN3L%20DROID/kernel-droid.asm
+
 
 Our goal is to retrieve the valid pin number to combine with another half of the flag: `flag{K3RN3L_DR0ID_%s}`
 
