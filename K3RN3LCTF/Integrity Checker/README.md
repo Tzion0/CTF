@@ -40,7 +40,7 @@ for i in range(5):
 	xored.append(chr(ord(class_name[i]) ^ byte[i]))
 	print(f"{class_name[i]} -> {xored[i]}")
 
-print("Xored : " + "".join(xored))
+print("Password : " + "".join(xored))
 ```
 ![IMG2](_resources/IMG3.png)
 
