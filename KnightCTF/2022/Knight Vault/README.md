@@ -43,3 +43,9 @@ for x in range(len(ct)):
 
 print(''.join(str(i) for i in ct))
 ```
+
+### Flag
+```
+4CTF{sO_yOu_gOt_mE_gOOd_jOOb_hApPy_hAc4iNg}
+```
+#### Note: The flag i get apparently not perfect, i solve it by replacing some characters manually
