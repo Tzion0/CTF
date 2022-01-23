@@ -1,5 +1,5 @@
 # Knight Switch Bank
-### Task source: https://github.com/Tzion0/CTF/tree/master/KnightCTF/2022/Knight%20Switch%20Bank
+### Task source: https://github.com/Tzion0/CTF/tree/master/KnightCTF
 
 By importing the ELF executable into Ghidra, we quickly noticed that the code will encode our input, store into a variable (We will call it temp by now), encode again and looping through each character of temp to do final comparison with the encoded flag.
 
