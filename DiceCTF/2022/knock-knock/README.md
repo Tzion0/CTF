@@ -90,7 +90,7 @@ constructor() {
 }
 ```
 
-The calling of `crypto.randomUUID` missing parentheses, it actually will always return the below on recommended version of nodejs:
+The calling of `crypto.randomUUID` missing parentheses, it actually will always return the following on recommended version of nodejs:
 
 ```
 secret-function randomUUID(options) {
@@ -107,7 +107,7 @@ secret-function randomUUID(options) {
 ```
 #### Note: For lower version of nodejs, it will return `undefined` instead. 
 
-So the correct code should be `crypto.randomUUID()` instead to get the proper random secret. With that, I create a small script to generate URL of other paste, I assuming that the first paste `id=0` is the flag:
+So the correct code should be `crypto.randomUUID()` to get the proper random secret. With that, I create a small script to generate URL of other paste, I assuming that the first paste `id=0` is the flag:
 
 ```
 const crypt = require('crypto');
