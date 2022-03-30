@@ -1,2 +1,2 @@
 # GDB_Test_Drive
-### Writeup:
+### Writeup: https://tzion0.github.io/posts/picoctf2022-rev/
