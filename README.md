@@ -1,2 +1,1 @@
-# TFCCTF Writeup
-
+# CTF Writeup / Walkthrough Area
